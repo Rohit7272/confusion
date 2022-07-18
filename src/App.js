@@ -7,11 +7,10 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
+    <h1 className='h1' > <b> Fresh Food ! </b> </h1>
+    <Menu/>
+     </div>
     
-     <Menu />
-    
-    
-    </div>
   );
 }
 
