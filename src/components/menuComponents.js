@@ -1,47 +1,80 @@
-import React, { Component } from 'react';
-import { Media } from 'reactstrap';
+import React from 'react';
+import { Link } from "react-router-dom";
+import { CardBody,CardText,Media,Card,CardImg,CardImgOverlay, CardTitle, Col, ListGroup, ListGroupItem, Row, Button} from 'reactstrap';
+import DishDetail from './DishdetailComponent'
 
 
-class Menu extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            dishes: this.props.dishes
-        }                           
-               
+
+const Menu=(props)=>{
+
+   const menu=(props)=>{return(
+    <Row>
+    {props.dishes.map((item,index)=>{
+      return (
+        
+        <Col key={index} onClick={() => props.onClick(item)}  md='5' sm="12" xs="12">
+  <Card inverse>
+    <CardImg
+      alt={item.name}
+      src={item.image}
+      style={{
+        height: 310
+        
+      }}
+      width=""
+    />
+    <CardImgOverlay>
+      <CardTitle tag="h5" style={{color : "black"}}>
+      {item.name}
+      
+      </CardTitle>
+    </CardImgOverlay>
+    
+  </Card>
+</Col>)
+}        
+)}
+</Row>)}
+    const  renderComments=(dish)=>{
+      if (dish != null) {
+        return (
+          <Col md='5' sm="12" xs="12">
+      <h4>Comments</h4>
+      
+      </Col>)}
+      else {
+        return <div></div>
+      }
     }
+
     
 
-    render() {
-        const menu = this.state.dishes.map((dish) => {
-            return (
-              <div key={dish.id} className="col-12 mt-5">
-                <Media tag="">
-                  <Media left middle>
-                      <Media object src={dish.image} alt={dish.name}  />
-                  </Media>
-                  <Media body className="ml-5">
-                    <Media heading>{dish.name}</Media>
-                    <p>{dish.description}</p>
-                          {dish.price}
-                  </Media>
-                </Media>
-              </div>
-              
-            );
-        });
 
-        return (
-          <div className="container">
-            <div className="row">
-              <Media list>
-                  {menu}
-              </Media>
-            </div>
-            
-          </div>
-        );
-    }
+
+  return (
+    
+    <div className="container">
+      <div className="row">
+      <Media list>
+        {menu(props)}
+      </Media>
+      </div>
+    <div className='row'>
+    <Row>
+      <Col md='5' sm="12" xs="12">
+        <DishDetail dish={props.selectedDish}/>
+      </Col>
+      <Col md='1'></Col>
+
+        {renderComments(props.selectedDish)}
+
+    </Row>
+    
+         </div>
+         </div>
+  )
 }
+
+
 
 export default Menu;

@@ -4,4 +4,61 @@
     text-align: center;
     
 }
+.row-header{
+    margin: 0px auto;
+    padding: 70px 30px 70px 30px auto;
+    }
+    .row-content {
+    margin:0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height:400px;
+    }
+    .footer{
+    background-color: #D1C4E9;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    }
+    .jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background: #9575CD ;
+    color:floralwhite;
+    }
+    address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+    }
+    .navbar-dark {
+    background-color: #FF869E;
+    
+    }
+    .heading-div{
+      position: relative;
+    }
+    .backgroundimg{
+      height: 400px;
+      width: 100%;
+    }
+    .heading{
+      position:absolute;
+      top:0;
+      padding: 40px;
+    
+  
+    }
+    .heading h5{
+      font-size: 3em;
+      font-weight: 600;
+      
+      
+    }
+    .heading p{
+      font-size: 2em;
+      
+    }
+    .leader-div{
+      display: flex;
+    }
 
